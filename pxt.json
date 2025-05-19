@@ -1,0 +1,9 @@
+{
+  "name": "makecode-ledartest",
+  "description": "Tutorial för att testa ledare/isolator med krokodilklämmor",
+  "dependencies": {
+    "core": "*"
+  },
+  "files": [],
+  "preferredEditor": "blocksprj"
+}
