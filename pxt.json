@@ -6,4 +6,12 @@
   },
   "files": [],
   "preferredEditor": "blocksprj"
+    "tutorials": [
+    {
+      "name": "ledartest",
+      "title": "Testare: Ledare eller isolator",
+      "description": "Bygg ett verktyg för att testa om ett material leder ström.",
+      "path": "tutorials/ledartest/tutorial.md"
+    }
+  ]
 }
