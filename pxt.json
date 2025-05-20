@@ -10,9 +10,9 @@
     "path": "tutorials/ledartest/tutorial.md"
   },
   {
-    "name": "bitbot-enkel-ovning",
+    "name": "bitbot-testare",
     "title": "BitBot: Enkla rörelser och avstånd",
     "description": "Lär dig köra och stanna med BitBot och ultraljudssensor",
-    "path": "tutorials/bitbot-enkel-ovning/tutorial.md"
+    "path": "tutorials/bitbot-testare/tutorial.md"
   }
 ]
