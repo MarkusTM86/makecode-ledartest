@@ -1,18 +1,18 @@
-{
-  "name": "makecode-tutorials-bitbot",
-  "description": "Exempeltutorial med BitBot och MakeCode",
-  "dependencies": {
-    "core": "*",
-    "bitbot": "github:4tronix/BitBot"
+"dependencies": {
+  "core": "*",
+  "bitbot": "github:4tronix/BitBot"
+},
+"tutorials": [
+  {
+    "name": "ledartest",
+    "title": "Testare: Ledare eller isolator",
+    "description": "Testa om material leder ström",
+    "path": "tutorials/ledartest/tutorial.md"
   },
-  "files": [],
-  "preferredEditor": "blocksprj",
-  "tutorials": [
-    {
-      "name": "bitbot-testare",
-      "title": "BitBot: Testare för ledare",
-      "description": "Bygg en testare som visar om ett material leder ström",
-      "path": "tutorials/bitbot-testare/tutorial.md"
-    }
-  ]
-}
+  {
+    "name": "bitbot-testare",
+    "title": "BitBot: Enkla rörelser",
+    "description": "Lär dig köra framåt och stanna med BitBot",
+    "path": "tutorials/bitbot-testare/tutorial.md"
+  }
+]
