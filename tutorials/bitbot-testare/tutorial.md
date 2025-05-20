@@ -1,57 +1,83 @@
-# BitBot: Testare för ledare
+# BitBot: Enkla rörelser och avstånd
 
 # package
 bitbot=github:4tronix/BitBot
 
-## Steg 1
+## Steg 1: Kör framåt
 
-Nu ska vi använda ett block för vad som ska hända när en krets sluts.
+Vi börjar med att få BitBot att köra rakt fram.
 
 ```blocks
-input.onPinPressed(TouchPin.P0, function () {
-
-})
-input.onPinReleased(TouchPin.P0, function () {
-
-})
 bitbot.motor(BBMotor.All, 100)
+```
+
+Denna kod kör båda motorerna framåt med full fart.
+
+## Steg 2: Vänta lite
+
+Vi vill att BitBot ska köra i 1 sekund, sedan stanna.
+
+```blocks
+bitbot.motor(BBMotor.All, 100)
+basic.pause(1000)
 bitbot.stop(BBMotor.All)
-basic.showIcon(IconNames.Heart)
-basic.showIcon(IconNames.No)
 ```
 
-## Steg 2
+Blocket `pause` väntar 1000 millisekunder = 1 sekund.
 
-Lägg till något som händer när Pin0 trycks, t.ex. köra framåt och visa hjärta.
+## Steg 3: Avståndssensor
+
+BitBot har en ultraljudssensor framtill. Den mäter avstånd till t.ex. väggar.
+
+Lägg till följande block för att **visa avståndet i cm** på micro:bitens display:
 
 ```blocks
-input.onPinPressed(TouchPin.P0, function () {
-    bitbot.motor(BBMotor.All, 100)
-    basic.showIcon(IconNames.Heart)
+basic.showNumber(bitbot.sonar(BBPingUnit.Centimeters))
+```
+
+Prova att hålla handen framför BitBot – siffran ändras!
+
+## Steg 4: Stanna om något är i vägen
+
+Nu ska vi kombinera sensorn med motorerna.
+
+BitBot ska köra **så länge det är fritt framför**, och stanna om något är närmare än 10 cm.
+
+```blocks
+basic.forever(function () {
+    if (bitbot.sonar(BBPingUnit.Centimeters) < 10) {
+        bitbot.stop(BBMotor.All)
+    } else {
+        bitbot.motor(BBMotor.All, 100)
+    }
 })
 ```
 
-## Steg 3
+## Steg 5: Testa!
 
-Lägg till ett block för när Pin0 släpps – stanna BitBot och visa kryss.
+Sätt BitBot på golvet.
+
+1. Kör programmet.
+2. Håll upp handen eller ett föremål framför roboten.
+3. Vad händer när du kommer nära?
+
+## Bonus: Lägg till ljud
+
+Vill du att BitBot ska pipa när den måste stanna?
+
+Lägg till detta inuti `if`-blocket:
 
 ```blocks
-input.onPinReleased(TouchPin.P0, function () {
-    bitbot.stop(BBMotor.All)
-    basic.showIcon(IconNames.No)
-})
+music.playTone(Note.C, music.beat(BeatFraction.Quarter))
 ```
 
-## Steg 4
+---
 
-Testa olika material genom att koppla en ledare mellan GND och Pin0.
+## Klar!
 
-Fungerar:
-- Aluminiumfolie
-- Mynt
-- Våt trasa
+Nu har du skapat en BitBot som:
+- Kör framåt
+- Reagerar på hinder
+- Kan användas i t.ex. hinderbanor
 
-Fungerar inte:
-- Plast
-- Papper
-- Trä
+Vad mer kan du styra med sensorer? Vändning? Ljusstyrka? Tryck?
