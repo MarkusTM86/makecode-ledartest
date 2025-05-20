@@ -1,17 +1,18 @@
 {
-  "name": "makecode-ledartest",
-  "description": "Tutorial för att testa ledare/isolator med krokodilklämmor",
+  "name": "makecode-tutorials-bitbot",
+  "description": "Exempeltutorial med BitBot och MakeCode",
   "dependencies": {
-    "core": "*"
+    "core": "*",
+    "bitbot": "github:4tronix/BitBot"
   },
   "files": [],
-  "preferredEditor": "blocksprj"
-    "tutorials": [
+  "preferredEditor": "blocksprj",
+  "tutorials": [
     {
-      "name": "ledartest",
-      "title": "Testare: Ledare eller isolator",
-      "description": "Bygg ett verktyg för att testa om ett material leder ström.",
-      "path": "tutorials/ledartest/tutorial.md"
+      "name": "bitbot-testare",
+      "title": "BitBot: Testare för ledare",
+      "description": "Bygg en testare som visar om ett material leder ström",
+      "path": "tutorials/bitbot-testare/tutorial.md"
     }
   ]
 }
